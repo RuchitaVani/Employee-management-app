@@ -58,3 +58,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 "# Employee-management-app" 
+
+
+For this project 
+run on
+[localhost 4209 ](http://localhost:4209/dashboard)
+
+user name : hradmin@gmail.com
+password : 112233
+
