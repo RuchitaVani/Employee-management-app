@@ -1,1 +1,150 @@
-<p>employee works!</p>
+<div class="">
+  <div class="row">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col-6 text-white">
+              <strong>Employee Portal</strong>
+            </div>
+            <div class="col-6 text-end">
+              <button class="btn btn-warning">Add New</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered text-nowrap text-center">
+              <thead>
+                <tr>
+                  <th>Sr No.</th>
+                  <th>Name</th>
+                  <th>Contact No</th>
+                  <th>Email</th>
+                  <th>Department</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td class="d-flex justify-content-evenly gap-1">
+                    <button class="btn btn-success">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col-6 text-white">
+              <strong>New Employee</strong>
+            </div>
+            <div class="col-6 text-end">
+              <button class="btn btn-primary">Close</button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form class="mb-4">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="employeeName" class="form-label"
+                  >Employee Name</label
+                >
+                <input
+                  type="text"
+                  name="employeeName"
+                  id="employeeName"
+                  placeholder="Enter employee name"
+                  class="form-control"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="contactNo" class="form-label">Contact No</label>
+                <input
+                  type="text"
+                  name="contactNo"
+                  id="contactNo"
+                  placeholder="Enter contact number"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="emailId" class="form-label">Email</label>
+                <input
+                  type="email"
+                  name="emailId"
+                  id="emailId"
+                  placeholder="Enter email"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="deptId" class="form-label">Parent Department</label>
+                <select id="deptId" name="deptId" class="form-select">
+                  <option
+                    *ngFor="let item of parentDepartList; let i = index"
+                    [value]="item.departmentId"
+                  >
+                    {{ item.departmentName }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="deptId" class="form-label">Child Department</label>
+                <select id="deptId" name="deptId" class="form-select">
+                  <option
+                    *ngFor="let item of childDepartList; let i = index"
+                    [value]="item.childDepartList"
+                  >
+                    {{ item.departmentName }}
+                  </option>
+                </select>
+              </div>
+              <div class="col-md-6 mt-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  id="password"
+                  placeholder="Enter password"
+                />
+              </div>
+              <div class="col-md-6 mt-4">
+                <div>Select Gender</div>
+                <label>
+                  <input type="radio" value="Male" name="gender" /> Male
+                </label>
+                <label>
+                  <input type="radio" value="Female" name="gender" /> Female
+                </label>
+              </div>
+            </div>
+            <div class="col-md-6 mt-4 mb-4">
+              <button type="button" class="btn btn-primary">Update</button>
+              <button type="button" class="btn btn-warning">Submit</button>
+              <button type="button" class="btn btn-warning mt-3">Submit</button>
+            </div>
+          </form>
+        </div>
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+    </div>
+  </div>
+</div>
