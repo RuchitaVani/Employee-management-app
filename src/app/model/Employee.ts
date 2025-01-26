@@ -33,3 +33,8 @@ export interface IParentDept{
     departmentName: string;
 
   }
+export interface IApiResponse {
+    message: string;
+    result: boolean;
+    data: any
+}

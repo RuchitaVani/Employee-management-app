@@ -97,23 +97,23 @@
               <div class="col-md-6">
                 <label for="deptId" class="form-label">Parent Department</label>
                 <select id="deptId" name="deptId" class="form-select">
-                  <option
-                    *ngFor="let item of parentDepartList; let i = index"
-                    [value]="item.departmentId"
-                  >
-                    {{ item.departmentName }}
+                    <option selected> ANCC</option>
+                  @for (item of parentDeptList; track $index) {
+
+                    <option [value]="item.departmentId">  {{ item.departmentName }}
                   </option>
+                  }
                 </select>
               </div>
               <div class="col-md-6">
                 <label for="deptId" class="form-label">Child Department</label>
                 <select id="deptId" name="deptId" class="form-select">
-                  <option
+                  <!-- <option
                     *ngFor="let item of childDepartList; let i = index"
                     [value]="item.childDepartList"
                   >
                     {{ item.departmentName }}
-                  </option>
+                  </option> -->
                 </select>
               </div>
               <div class="col-md-6 mt-3">
