@@ -65,6 +65,7 @@
                 <input
                   type="text"
                   name="employeeName"
+                  [(ngModel)]="employeeObj.employeeName"
                   id="employeeName"
                   placeholder="Enter employee name"
                   class="form-control"
@@ -78,6 +79,7 @@
                   id="contactNo"
                   placeholder="Enter contact number"
                   class="form-control"
+                  [(ngModel)]="employeeObj.contactNo"
                 />
               </div>
             </div>
@@ -90,6 +92,7 @@
                   id="emailId"
                   placeholder="Enter email"
                   class="form-control"
+                  [(ngModel)]="employeeObj.emailId"
                 />
               </div>
             </div>
@@ -114,7 +117,7 @@
               </div>
               <div class="col-md-6">
                 <label for="deptId" class="form-label">Child Department</label>
-                <select id="deptId" name="deptId" class="form-select">
+                <select id="deptId" name="deptId" class="form-select"  [(ngModel)]="employeeObj.deptId" >
                   <option selected>Select Department</option>
                   @for (item of childDeptList; track $index) {
                   <option [value]="item.childDeptId">
@@ -131,6 +134,7 @@
                   name="password"
                   id="password"
                   placeholder="Enter password"
+                  [(ngModel)]="employeeObj.password"
                 />
               </div>
               <div class="col-md-6 mt-4">
