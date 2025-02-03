@@ -37,6 +37,12 @@ export class EmployeeComponent implements OnInit {
   }
 
   onSaveEmp(){
-    this.empService.creatNewEmployee(this.employeeObj)
+    this.empService.creatNewEmployee(this.employeeObj).subscribe((res:IApiResponse)=>{
+      if(res.result){
+        alert("Employee creation success")
+      }else{
+        alert(res.message)
+      }
+    })
   }
 }
