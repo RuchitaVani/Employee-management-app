@@ -140,19 +140,19 @@
               <div class="col-md-6 mt-4">
                 <div>Select Gender</div>
                 <label>
-                  <input type="radio" value="Male" name="gender" /> Male
+                  <input type="radio" value="Male" name="gender" [(ngModel)]="employeeObj.gender" /> Male
                 </label>
                 <label>
-                  <input type="radio" value="Female" name="gender" /> Female
+                  <input type="radio" value="Female" name="gender" [(ngModel)]="employeeObj.gender" /> Female
                 </label>
               </div>
             </div>
             <div class="col-md-6 mt-4 mb-4">
-              <button type="button" class="btn btn-primary">Update</button>
-              <button type="button" class="btn btn-warning">Submit</button>
+              <!-- <button type="button" class="btn btn-primary">Update</button> -->
+              <!-- <button type="button" class="btn btn-warning">Submit</button> -->
               <button type="submit" (click)="onSaveEmp()" class="btn btn-warning mt-3">Submit</button>
             </div>
-          </form>
+          </form> 
         </div>
         <!-- <router-outlet></router-outlet> -->
       </div>
