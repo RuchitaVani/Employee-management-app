@@ -10,7 +10,10 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) { }
 
-  creatNewEmployee(obj:Employee): Observable<IApiResponse>{
-    return this.http.post<IApiResponse>('https://projectapi.gerasim.in/api/EmployeeManagement/CreateEmployee' , obj);
+  creatNewEmployee(obj:Employee){
+    return this.http.post<Employee>('https://projectapi.gerasim.in/api/EmployeeManagement/CreateEmployee' , obj);
+  }
+  getEmployes(){
+    return this.http.get<Employee>('https://projectapi.gerasim.in/api/EmployeeManagement/GetAllEmployees')
   }
 }

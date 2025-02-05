@@ -1,6 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../../services/master.service';
-import { Employee, IApiResponse, IChildDept, IParentDept } from '../../model/Employee';
+import {
+  Employee,
+  IApiResponse,
+  IChildDept,
+  IParentDept,
+} from '../../model/Employee';
 import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
 
@@ -36,14 +41,14 @@ export class EmployeeComponent implements OnInit {
       });
   }
 
-  onSaveEmp(){
-    // debugger;
-    this.empService.creatNewEmployee(this.employeeObj).subscribe((res:IApiResponse)=>{
-      if(res.result){
-        alert("Employee creation success")
-      }else{
-        alert(res.message)
+  onSaveEmp() {
+    debugger;
+    this.empService.creatNewEmployee(this.employeeObj).subscribe(
+      (res: Employee) => {
+        alert('Employee creation success');
+      },error => {
+        alert('error From Api')
       }
-    })
+    )
   }
 }
