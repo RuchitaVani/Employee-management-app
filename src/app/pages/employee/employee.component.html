@@ -26,17 +26,21 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td class="d-flex justify-content-evenly gap-1">
-                    <button class="btn btn-success">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
+                @for (item of employeeList; track $index) {
+                  <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.contactNo}}</td>
+                    <td>{{item.emailId}}</td>
+                    <td>{{item.deptId}}</td>
+                    <td class="d-flex justify-content-evenly gap-1">
+                      <button class="btn btn-success">Edit</button>
+                      <button class="btn btn-danger">Delete</button>
+                    </td>
+                  </tr>
+
+                }
+                
               </tbody>
             </table>
           </div>

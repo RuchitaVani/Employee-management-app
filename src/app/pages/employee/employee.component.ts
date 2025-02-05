@@ -21,12 +21,19 @@ export class EmployeeComponent implements OnInit {
   deptId: number = 0;
 
   employeeObj: Employee = new Employee();
+  employeeList : Employee[] = [];
 
   masterService = inject(MasterService);
   empService = inject(EmployeeService);
   ngOnInit(): void {
     console.log(this.masterService);
     this.getParentDeptList();
+    this.getEmployees();
+  }
+  getEmployees() {
+    this.empService.getEmployes().subscribe((res:Employee[]) => {
+      this.employeeList = res;
+    })
   }
   getParentDeptList() {
     this.masterService.getParentDept().subscribe((res: IApiResponse) => {
