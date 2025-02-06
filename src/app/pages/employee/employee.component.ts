@@ -52,6 +52,18 @@ export class EmployeeComponent implements OnInit {
       );
     }
   }
+  onUpdateEmp(){
+    debugger;
+    this.empService.updateEmployee(this.employeeObj).subscribe(
+      (res: Employee) => {
+        alert('Employee update success');
+        this.getEmployees();
+      },
+      (error) => {
+        alert('error From Api');
+      }
+    );
+  }
   getParentDeptList() {
     this.masterService.getParentDept().subscribe((res: IApiResponse) => {
       this.parentDeptList = res.data;

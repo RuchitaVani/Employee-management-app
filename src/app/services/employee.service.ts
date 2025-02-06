@@ -13,6 +13,9 @@ export class EmployeeService {
   creatNewEmployee(obj:Employee){
     return this.http.post<Employee>('https://projectapi.gerasim.in/api/EmployeeManagement/CreateEmployee' , obj);
   }
+  updateEmployee(obj:Employee){
+    return this.http.put<Employee>('https://projectapi.gerasim.in/api/EmployeeManagement/UpdateEmployee/'+obj.employeeId , obj);
+  }
   getEmployes(){
     return this.http.get<Employee[]>('https://projectapi.gerasim.in/api/EmployeeManagement/GetAllEmployees')
   }

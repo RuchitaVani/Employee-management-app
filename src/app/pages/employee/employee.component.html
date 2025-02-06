@@ -151,9 +151,13 @@
               </div>
             </div>
             <div class="col-md-6 mt-4 mb-4">
-              <!-- <button type="button" class="btn btn-primary">Update</button> -->
-              <!-- <button type="button" class="btn btn-warning">Submit</button> -->
-              <button type="submit" (click)="onSaveEmp()" class="btn btn-warning mt-3">Submit</button>
+        @if (employeeObj.employeeId == 0) {
+          <button type="submit" class="btn btn-primary" (click)="onSaveEmp()">Submit</button>
+        }
+        @else {
+          <button type="submit" class="btn btn-warning mt-3"  (click)="onUpdateEmp()" >update</button>
+        }
+          
             </div>
           </form> 
         </div>
