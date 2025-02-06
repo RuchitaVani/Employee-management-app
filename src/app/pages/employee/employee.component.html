@@ -34,7 +34,7 @@
                     <td>{{item.emailId}}</td>
                     <td>{{item.deptId}}</td>
                     <td class="d-flex justify-content-evenly gap-1">
-                      <button class="btn btn-success">Edit</button>
+                      <button class="btn btn-success" (click)="onEdit(item)">Edit</button>
                       <button class="btn btn-danger" (click)="onDelete(item.employeeId)">Delete</button>
                     </td>
                   </tr>

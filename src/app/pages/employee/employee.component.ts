@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
   deptId: number = 0;
 
   employeeObj: Employee = new Employee();
-  employeeList : Employee[] = [];
+  employeeList: Employee[] = [];
 
   masterService = inject(MasterService);
   empService = inject(EmployeeService);
@@ -30,23 +30,27 @@ export class EmployeeComponent implements OnInit {
     this.getParentDeptList();
     this.getEmployees();
   }
+  onEdit(obj: Employee) {
+    this.employeeObj = obj;
+  }
   getEmployees() {
-    this.empService.getEmployes().subscribe((res:Employee[]) => {
+    this.empService.getEmployes().subscribe((res: Employee[]) => {
       this.employeeList = res;
-    })
+    });
   }
   onDelete(id: number) {
     const result = confirm('Are you sure you want to delete this employee?');
     if (result) {
-    this.empService.deleteEmpById(id).subscribe(
-      (res: Employee) => {
-        alert('Employee deleted success');
-        this.getEmployees();
-      },error => {
-        alert('error From Api')
-      }
-    )
-  }
+      this.empService.deleteEmpById(id).subscribe(
+        (res: Employee) => {
+          alert('Employee deleted success');
+          this.getEmployees();
+        },
+        (error) => {
+          alert('error From Api');
+        }
+      );
+    }
   }
   getParentDeptList() {
     this.masterService.getParentDept().subscribe((res: IApiResponse) => {
@@ -66,9 +70,10 @@ export class EmployeeComponent implements OnInit {
     this.empService.creatNewEmployee(this.employeeObj).subscribe(
       (res: Employee) => {
         alert('Employee creation success');
-      },error => {
-        alert('error From Api')
+      },
+      (error) => {
+        alert('error From Api');
       }
-    )
+    );
   }
 }
