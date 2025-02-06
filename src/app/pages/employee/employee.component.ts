@@ -35,6 +35,19 @@ export class EmployeeComponent implements OnInit {
       this.employeeList = res;
     })
   }
+  onDelete(id: number) {
+    const result = confirm('Are you sure you want to delete this employee?');
+    if (result) {
+    this.empService.deleteEmpById(id).subscribe(
+      (res: Employee) => {
+        alert('Employee deleted success');
+        this.getEmployees();
+      },error => {
+        alert('error From Api')
+      }
+    )
+  }
+  }
   getParentDeptList() {
     this.masterService.getParentDept().subscribe((res: IApiResponse) => {
       this.parentDeptList = res.data;

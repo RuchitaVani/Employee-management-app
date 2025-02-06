@@ -16,4 +16,7 @@ export class EmployeeService {
   getEmployes(){
     return this.http.get<Employee[]>('https://projectapi.gerasim.in/api/EmployeeManagement/GetAllEmployees')
   }
+  deleteEmpById( id: number ){
+    return this.http.delete<Employee>('https://projectapi.gerasim.in/api/EmployeeManagement/DeleteEmployee/'+id)
+  }
 }
