@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { MasterService } from '../../services/master.service';
 import {
   Employee,
@@ -25,6 +25,8 @@ export class EmployeeComponent implements OnInit {
 
   masterService = inject(MasterService);
   empService = inject(EmployeeService);
+
+  isSidePaneOpen = signal<boolean>(false);
   ngOnInit(): void {
     console.log(this.masterService);
     this.getParentDeptList();
@@ -32,6 +34,12 @@ export class EmployeeComponent implements OnInit {
   }
   onEdit(obj: Employee) {
     this.employeeObj = obj;
+  }
+  addNew(){
+    this.isSidePaneOpen.set(true);
+  }
+  close(){
+    this.isSidePaneOpen.set(false);
   }
   getEmployees() {
     this.empService.getEmployes().subscribe((res: Employee[]) => {

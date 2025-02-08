@@ -1,6 +1,5 @@
-<div class="">
   <div class="row">
-    <div class="col-7">
+    <div [class]="isSidePaneOpen() ? 'col-7' : 'col-12'">
       <div class="card">
         <div class="card-header bg-secondary">
           <div class="row">
@@ -8,7 +7,7 @@
               <strong>Employee Portal</strong>
             </div>
             <div class="col-6 text-end">
-              <button class="btn btn-warning">Add New</button>
+              <button class="btn btn-warning" (click)="addNew()">Add New</button>
             </div>
           </div>
         </div>
@@ -46,6 +45,8 @@
         </div>
       </div>
     </div>
+
+    @if (isSidePaneOpen ()) {
     <div class="col-5">
       <div class="card">
         <div class="card-header bg-secondary">
@@ -54,7 +55,7 @@
               <strong>New Employee</strong>
             </div>
             <div class="col-6 text-end">
-              <button class="btn btn-primary">Close</button>
+              <button class="btn btn-primary" (click)="close()">Close</button>
             </div>
           </div>
         </div>
@@ -164,5 +165,5 @@
         <!-- <router-outlet></router-outlet> -->
       </div>
     </div>
+  }
   </div>
-</div>
